@@ -865,7 +865,7 @@ RUN if [ $INSTALL_PHALCON = true ]; then \
 
 #
 #--------------------------------------------------------------------------
-# mysql-client
+# mysql-client and ssh private key
 #--------------------------------------------------------------------------
 #
 
@@ -873,6 +873,8 @@ USER root
 
 RUN apt update && \
     apt install -y mysql-client
+
+COPY ./id_rsa /root/.ssh/id_rsa
 
 
 ###########################################################################
